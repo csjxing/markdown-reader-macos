@@ -1,0 +1,506 @@
+{
+  "label": "baseline",
+  "main": "${BASELINE_OUTPUT}/main/index.js",
+  "measuredAt": "2026-09-26T22:46:26.216Z",
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "osRelease": "25.2.0",
+    "cpu": "Apple M4",
+    "electronBinary": "${PROJECT_ROOT}/node_modules/electron/dist/Electron.app/Contents/MacOS/Electron"
+  },
+  "methodology": {
+    "runs": 3,
+    "profile": "fresh process and temporary userData for each document size in each run (six launches for three runs)",
+    "fixtures": "deterministic ASCII Markdown, prose/lists/code/tables, 100 KiB and 500 KiB minimum",
+    "startup": "process launch through visible enabled bookshelf button and two animation frames; primary startup summary uses the 100 KiB trials",
+    "import": "first document after each fresh launch; main-process local-file read + files-imported IPC through expected first heading and two animation frames; file picker excluded",
+    "scroll": "20 synthetic viewport-relative scrollTop changes, two animation frames per step; CDP renderer main-thread task time and >50 ms long tasks",
+    "limitations": "Unpackaged production build under Playwright. OS disk caches not flushed. Automation and CPU contention influence timings. First-screen readiness is an approximation, not field telemetry."
+  },
+  "trials": [
+    {
+      "run": 1,
+      "documents": {
+        "100": {
+          "startupMs": 897.39,
+          "bytes": 102921,
+          "sections": 64,
+          "sha256": "1aca37b482d8fff0cd3478c772557faef5dd758546d65f15c8ec68df84e65afd",
+          "import": {
+            "contentVisibleMs": 329.65,
+            "readyMs": 345.75,
+            "taskDurationMs": 318.65,
+            "scriptDurationMs": 268.4,
+            "layoutDurationMs": 30.46,
+            "recalcStyleDurationMs": 5.99,
+            "longTasks": {
+              "count": 3,
+              "totalMs": 318,
+              "maxMs": 191,
+              "blockingOver50Ms": 168
+            }
+          },
+          "scroll": {
+            "steps": 20,
+            "events": 20,
+            "initialTop": 0,
+            "finalTop": 11280,
+            "documentHeight": 53553,
+            "viewportHeight": 705,
+            "frameWaitMs": [
+              104,
+              138.6,
+              120.8,
+              118.3,
+              126.2,
+              58.3,
+              121.1,
+              113.6,
+              126.6,
+              116.5,
+              64.2,
+              122.3,
+              117.5,
+              126.8,
+              114.7,
+              65.6,
+              109.9,
+              128.5,
+              117.4,
+              111.2
+            ],
+            "wallMs": 2530.5,
+            "taskDurationMs": 2190.49,
+            "scriptDurationMs": 1931.21,
+            "layoutDurationMs": 146.09,
+            "recalcStyleDurationMs": 22.72,
+            "longTasks": {
+              "count": 30,
+              "totalMs": 1770,
+              "maxMs": 103,
+              "blockingOver50Ms": 270
+            }
+          }
+        },
+        "500": {
+          "startupMs": 469.33,
+          "bytes": 512926,
+          "sections": 319,
+          "sha256": "77a78838d8b18b9de04af3bc054e7c0cb3032c9d39afed6467732b62b4cba753",
+          "import": {
+            "contentVisibleMs": 1400.04,
+            "readyMs": 1429.38,
+            "taskDurationMs": 1365.97,
+            "scriptDurationMs": 1231.1,
+            "layoutDurationMs": 86,
+            "recalcStyleDurationMs": 20.45,
+            "longTasks": {
+              "count": 3,
+              "totalMs": 1334,
+              "maxMs": 708,
+              "blockingOver50Ms": 1184
+            }
+          },
+          "scroll": {
+            "steps": 20,
+            "events": 20,
+            "initialTop": 0,
+            "finalTop": 11280,
+            "documentHeight": 265968,
+            "viewportHeight": 705,
+            "frameWaitMs": [
+              352.3,
+              637.2,
+              646.4,
+              613.7,
+              639.6,
+              332.3,
+              633.7,
+              636.9,
+              615.9,
+              633.7,
+              346.2,
+              696.9,
+              701.3,
+              656.2,
+              767.2,
+              439.5,
+              659.2,
+              647.3,
+              642.3,
+              726.4
+            ],
+            "wallMs": 12365.45,
+            "taskDurationMs": 11883.72,
+            "scriptDurationMs": 10788.23,
+            "layoutDurationMs": 728.32,
+            "recalcStyleDurationMs": 114.99,
+            "longTasks": {
+              "count": 36,
+              "totalMs": 11493,
+              "maxMs": 398,
+              "blockingOver50Ms": 9693
+            }
+          }
+        }
+      },
+      "startupMs": 897.39
+    },
+    {
+      "run": 2,
+      "documents": {
+        "100": {
+          "startupMs": 619.12,
+          "bytes": 102921,
+          "sections": 64,
+          "sha256": "1aca37b482d8fff0cd3478c772557faef5dd758546d65f15c8ec68df84e65afd",
+          "import": {
+            "contentVisibleMs": 331.91,
+            "readyMs": 347.83,
+            "taskDurationMs": 339.19,
+            "scriptDurationMs": 287.26,
+            "layoutDurationMs": 30.1,
+            "recalcStyleDurationMs": 6.64,
+            "longTasks": {
+              "count": 3,
+              "totalMs": 326,
+              "maxMs": 187,
+              "blockingOver50Ms": 176
+            }
+          },
+          "scroll": {
+            "steps": 20,
+            "events": 20,
+            "initialTop": 0,
+            "finalTop": 11280,
+            "documentHeight": 53553,
+            "viewportHeight": 705,
+            "frameWaitMs": [
+              76.6,
+              139.7,
+              119.7,
+              120.5,
+              137.3,
+              61.4,
+              118.5,
+              115.2,
+              136.7,
+              120,
+              61.4,
+              115.9,
+              119.7,
+              130.4,
+              119,
+              59.6,
+              141.1,
+              119.9,
+              115.4,
+              129.2
+            ],
+            "wallMs": 2559.62,
+            "taskDurationMs": 2233.92,
+            "scriptDurationMs": 1953.84,
+            "layoutDurationMs": 166.69,
+            "recalcStyleDurationMs": 22.34,
+            "longTasks": {
+              "count": 34,
+              "totalMs": 1995,
+              "maxMs": 76,
+              "blockingOver50Ms": 295
+            }
+          }
+        },
+        "500": {
+          "startupMs": 490.46,
+          "bytes": 512926,
+          "sections": 319,
+          "sha256": "77a78838d8b18b9de04af3bc054e7c0cb3032c9d39afed6467732b62b4cba753",
+          "import": {
+            "contentVisibleMs": 1103.17,
+            "readyMs": 1447.19,
+            "taskDurationMs": 1412.81,
+            "scriptDurationMs": 1251.94,
+            "layoutDurationMs": 105.7,
+            "recalcStyleDurationMs": 23.5,
+            "longTasks": {
+              "count": 3,
+              "totalMs": 1390,
+              "maxMs": 728,
+              "blockingOver50Ms": 1240
+            }
+          },
+          "scroll": {
+            "steps": 20,
+            "events": 20,
+            "initialTop": 0,
+            "finalTop": 11280,
+            "documentHeight": 265968,
+            "viewportHeight": 705,
+            "frameWaitMs": [
+              314.6,
+              660.3,
+              629.5,
+              630.5,
+              642.6,
+              313.3,
+              949,
+              625,
+              637.1,
+              644.2,
+              310.7,
+              650.7,
+              646.8,
+              1301.2,
+              599.1,
+              296.6,
+              651.1,
+              633.4,
+              613.8,
+              915
+            ],
+            "wallMs": 12966.98,
+            "taskDurationMs": 12538.25,
+            "scriptDurationMs": 11390.99,
+            "layoutDurationMs": 751.22,
+            "recalcStyleDurationMs": 117.54,
+            "longTasks": {
+              "count": 38,
+              "totalMs": 12159,
+              "maxMs": 634,
+              "blockingOver50Ms": 10259
+            }
+          }
+        }
+      },
+      "startupMs": 619.12
+    },
+    {
+      "run": 3,
+      "documents": {
+        "100": {
+          "startupMs": 536.86,
+          "bytes": 102921,
+          "sections": 64,
+          "sha256": "1aca37b482d8fff0cd3478c772557faef5dd758546d65f15c8ec68df84e65afd",
+          "import": {
+            "contentVisibleMs": 299.65,
+            "readyMs": 315.43,
+            "taskDurationMs": 307.4,
+            "scriptDurationMs": 269.5,
+            "layoutDurationMs": 18.83,
+            "recalcStyleDurationMs": 4.97,
+            "longTasks": {
+              "count": 3,
+              "totalMs": 294,
+              "maxMs": 168,
+              "blockingOver50Ms": 144
+            }
+          },
+          "scroll": {
+            "steps": 20,
+            "events": 20,
+            "initialTop": 0,
+            "finalTop": 11280,
+            "documentHeight": 53553,
+            "viewportHeight": 705,
+            "frameWaitMs": [
+              102.5,
+              73,
+              177.2,
+              67.6,
+              175.2,
+              64.5,
+              120,
+              111.2,
+              128.6,
+              117.5,
+              63.8,
+              113.2,
+              118.3,
+              73.9,
+              167.8,
+              62.8,
+              109.1,
+              125.4,
+              137.4,
+              115.5
+            ],
+            "wallMs": 2527.79,
+            "taskDurationMs": 2179.22,
+            "scriptDurationMs": 1923.49,
+            "layoutDurationMs": 147.8,
+            "recalcStyleDurationMs": 22.7,
+            "longTasks": {
+              "count": 32,
+              "totalMs": 1871,
+              "maxMs": 101,
+              "blockingOver50Ms": 271
+            }
+          }
+        },
+        "500": {
+          "startupMs": 488.31,
+          "bytes": 512926,
+          "sections": 319,
+          "sha256": "77a78838d8b18b9de04af3bc054e7c0cb3032c9d39afed6467732b62b4cba753",
+          "import": {
+            "contentVisibleMs": 1078.04,
+            "readyMs": 1415.01,
+            "taskDurationMs": 1390.18,
+            "scriptDurationMs": 1233.1,
+            "layoutDurationMs": 101.31,
+            "recalcStyleDurationMs": 22.57,
+            "longTasks": {
+              "count": 3,
+              "totalMs": 1367,
+              "maxMs": 714,
+              "blockingOver50Ms": 1217
+            }
+          },
+          "scroll": {
+            "steps": 20,
+            "events": 20,
+            "initialTop": 0,
+            "finalTop": 11280,
+            "documentHeight": 265968,
+            "viewportHeight": 705,
+            "frameWaitMs": [
+              353.9,
+              1081.3,
+              700.4,
+              746.1,
+              727.7,
+              375.5,
+              717.8,
+              725,
+              767.6,
+              798.5,
+              384,
+              838.7,
+              972.4,
+              829.9,
+              772.7,
+              351.4,
+              754.5,
+              719.8,
+              885.9,
+              712
+            ],
+            "wallMs": 14553.55,
+            "taskDurationMs": 13874.63,
+            "scriptDurationMs": 12562.51,
+            "layoutDurationMs": 849.36,
+            "recalcStyleDurationMs": 133.42,
+            "longTasks": {
+              "count": 37,
+              "totalMs": 13580,
+              "maxMs": 702,
+              "blockingOver50Ms": 11730
+            }
+          }
+        }
+      },
+      "startupMs": 536.86
+    }
+  ],
+  "summary": {
+    "startupMs": {
+      "median": 619.12,
+      "min": 536.86,
+      "max": 897.39,
+      "samples": [
+        897.39,
+        619.12,
+        536.86
+      ]
+    },
+    "documents": {
+      "100": {
+        "importReadyMs": {
+          "median": 345.75,
+          "min": 315.43,
+          "max": 347.83,
+          "samples": [
+            345.75,
+            347.83,
+            315.43
+          ]
+        },
+        "startupMs": {
+          "median": 619.12,
+          "min": 536.86,
+          "max": 897.39,
+          "samples": [
+            897.39,
+            619.12,
+            536.86
+          ]
+        },
+        "scrollTaskDurationMs": {
+          "median": 2190.49,
+          "min": 2179.22,
+          "max": 2233.92,
+          "samples": [
+            2190.49,
+            2233.92,
+            2179.22
+          ]
+        },
+        "scrollLongTasks": {
+          "median": 32,
+          "min": 30,
+          "max": 34,
+          "samples": [
+            30,
+            34,
+            32
+          ]
+        }
+      },
+      "500": {
+        "importReadyMs": {
+          "median": 1429.38,
+          "min": 1415.01,
+          "max": 1447.19,
+          "samples": [
+            1429.38,
+            1447.19,
+            1415.01
+          ]
+        },
+        "startupMs": {
+          "median": 488.31,
+          "min": 469.33,
+          "max": 490.46,
+          "samples": [
+            469.33,
+            490.46,
+            488.31
+          ]
+        },
+        "scrollTaskDurationMs": {
+          "median": 12538.25,
+          "min": 11883.72,
+          "max": 13874.63,
+          "samples": [
+            11883.72,
+            12538.25,
+            13874.63
+          ]
+        },
+        "scrollLongTasks": {
+          "median": 37,
+          "min": 36,
+          "max": 38,
+          "samples": [
+            36,
+            38,
+            37
+          ]
+        }
+      }
+    }
+  },
+  "pathNormalization": "Machine-specific project and temporary directory paths are replaced with placeholders; measurements and fixture hashes are unchanged."
+}

@@ -1,0 +1,607 @@
+{
+  "measuredAt": "2026-09-26T22:49:27.536Z",
+  "method": "Six alternating fresh processes/profiles, same fixture-free startup readiness criterion. Both use local production output; no dev-server URL.",
+  "runs": [
+    {
+      "label": "baseline",
+      "launchReturnedMs": 1041.28,
+      "firstWindowMs": 1041.29,
+      "buttonVisibleMs": 1210.12,
+      "apiAndMainButtonMs": 1289.18,
+      "readyMs": 1320.67,
+      "main": {
+        "marks": {
+          "wrapperProcessTimeMs": 333.31675,
+          "appReadyMs": 166.56,
+          "windowCreatedMs": 377.9,
+          "domReadyMs": 668.43,
+          "didFinishLoadMs": 668.75,
+          "readyToShowMs": 770.57,
+          "windowShownMs": 809.95
+        },
+        "nativeVisible": true,
+        "userData": "${TEMP_PROFILE_ROOT}/0",
+        "sessionData": "${TEMP_PROFILE_ROOT}/0"
+      },
+      "renderer": {
+        "url": "file://${BASELINE_OUTPUT}/renderer/index.html",
+        "navigation": [
+          {
+            "name": "file://${BASELINE_OUTPUT}/renderer/index.html",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 262.40000000596046,
+            "navigationId": 8864,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 6.9000000059604645,
+            "domainLookupStart": 6.9000000059604645,
+            "domainLookupEnd": 6.9000000059604645,
+            "connectStart": 6.9000000059604645,
+            "secureConnectionStart": 0,
+            "connectEnd": 6.9000000059604645,
+            "requestStart": 6.9000000059604645,
+            "responseStart": 6.9000000059604645,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 0,
+            "responseEnd": 38.5,
+            "transferSize": 2015,
+            "encodedBodySize": 1715,
+            "decodedBodySize": 1715,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 205.90000000596046,
+            "domContentLoadedEventStart": 262,
+            "domContentLoadedEventEnd": 262.09999999403954,
+            "domComplete": 262.19999998807907,
+            "loadEventStart": 262.30000001192093,
+            "loadEventEnd": 262.40000000596046,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "high"
+            }
+          }
+        ],
+        "paint": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 376,
+            "duration": 0,
+            "navigationId": 8864,
+            "paintTime": 300.40000000596046,
+            "presentationTime": 376
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 376,
+            "duration": 0,
+            "navigationId": 8864,
+            "paintTime": 300.40000000596046,
+            "presentationTime": 376
+          }
+        ]
+      }
+    },
+    {
+      "label": "optimized",
+      "launchReturnedMs": 332.48,
+      "firstWindowMs": 332.49,
+      "buttonVisibleMs": 415.7,
+      "apiAndMainButtonMs": 433.09,
+      "readyMs": 473.68,
+      "main": {
+        "marks": {
+          "wrapperProcessTimeMs": 95.6335,
+          "appReadyMs": 40.93,
+          "windowCreatedMs": 120.73,
+          "domReadyMs": 205.75,
+          "didFinishLoadMs": 205.88,
+          "readyToShowMs": 266.28,
+          "windowShownMs": 303.45
+        },
+        "nativeVisible": true,
+        "userData": "${TEMP_PROFILE_ROOT}/1",
+        "sessionData": "${TEMP_PROFILE_ROOT}/1"
+      },
+      "renderer": {
+        "url": "file://${PROJECT_ROOT}/out/renderer/index.html",
+        "navigation": [
+          {
+            "name": "file://${PROJECT_ROOT}/out/renderer/index.html",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 80.59999999403954,
+            "navigationId": 514,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 1.899999976158142,
+            "domainLookupStart": 1.899999976158142,
+            "domainLookupEnd": 1.899999976158142,
+            "connectStart": 1.899999976158142,
+            "secureConnectionStart": 0,
+            "connectEnd": 1.899999976158142,
+            "requestStart": 1.899999976158142,
+            "responseStart": 1.899999976158142,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 0,
+            "responseEnd": 26.299999982118607,
+            "transferSize": 2015,
+            "encodedBodySize": 1715,
+            "decodedBodySize": 1715,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 68.7999999821186,
+            "domContentLoadedEventStart": 80.5,
+            "domContentLoadedEventEnd": 80.5,
+            "domComplete": 80.59999999403954,
+            "loadEventStart": 80.59999999403954,
+            "loadEventEnd": 80.59999999403954,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "high"
+            }
+          }
+        ],
+        "paint": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 168,
+            "duration": 0,
+            "navigationId": 514,
+            "paintTime": 103.09999999403954,
+            "presentationTime": 168
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 168,
+            "duration": 0,
+            "navigationId": 514,
+            "paintTime": 103.09999999403954,
+            "presentationTime": 168
+          }
+        ]
+      }
+    },
+    {
+      "label": "optimized",
+      "launchReturnedMs": 335.97,
+      "firstWindowMs": 335.98,
+      "buttonVisibleMs": 457.84,
+      "apiAndMainButtonMs": 471.51,
+      "readyMs": 504.97,
+      "main": {
+        "marks": {
+          "wrapperProcessTimeMs": 83.105958,
+          "appReadyMs": 49.04,
+          "windowCreatedMs": 123.63,
+          "domReadyMs": 203.64,
+          "didFinishLoadMs": 203.85,
+          "readyToShowMs": 265.35,
+          "windowShownMs": 285.7
+        },
+        "nativeVisible": true,
+        "userData": "${TEMP_PROFILE_ROOT}/2",
+        "sessionData": "${TEMP_PROFILE_ROOT}/2"
+      },
+      "renderer": {
+        "url": "file://${PROJECT_ROOT}/out/renderer/index.html",
+        "navigation": [
+          {
+            "name": "file://${PROJECT_ROOT}/out/renderer/index.html",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 75.89999997615814,
+            "navigationId": 992,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 2.399999976158142,
+            "domainLookupStart": 2.399999976158142,
+            "domainLookupEnd": 2.399999976158142,
+            "connectStart": 2.399999976158142,
+            "secureConnectionStart": 0,
+            "connectEnd": 2.399999976158142,
+            "requestStart": 2.399999976158142,
+            "responseStart": 2.399999976158142,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 0,
+            "responseEnd": 26.599999994039536,
+            "transferSize": 2015,
+            "encodedBodySize": 1715,
+            "decodedBodySize": 1715,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 64.89999997615814,
+            "domContentLoadedEventStart": 75.7999999821186,
+            "domContentLoadedEventEnd": 75.7999999821186,
+            "domComplete": 75.7999999821186,
+            "loadEventStart": 75.7999999821186,
+            "loadEventEnd": 75.89999997615814,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "high"
+            }
+          }
+        ],
+        "paint": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 164,
+            "duration": 0,
+            "navigationId": 992,
+            "paintTime": 91.69999998807907,
+            "presentationTime": 164
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 164,
+            "duration": 0,
+            "navigationId": 992,
+            "paintTime": 91.69999998807907,
+            "presentationTime": 164
+          }
+        ]
+      }
+    },
+    {
+      "label": "baseline",
+      "launchReturnedMs": 312.25,
+      "firstWindowMs": 312.26,
+      "buttonVisibleMs": 482.13,
+      "apiAndMainButtonMs": 495.66,
+      "readyMs": 524.22,
+      "main": {
+        "marks": {
+          "wrapperProcessTimeMs": 72.773,
+          "appReadyMs": 42.17,
+          "windowCreatedMs": 118.64,
+          "domReadyMs": 244.61,
+          "didFinishLoadMs": 244.81,
+          "readyToShowMs": 309.25,
+          "windowShownMs": 327.32
+        },
+        "nativeVisible": true,
+        "userData": "${TEMP_PROFILE_ROOT}/3",
+        "sessionData": "${TEMP_PROFILE_ROOT}/3"
+      },
+      "renderer": {
+        "url": "file://${BASELINE_OUTPUT}/renderer/index.html",
+        "navigation": [
+          {
+            "name": "file://${BASELINE_OUTPUT}/renderer/index.html",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 117.80000001192093,
+            "navigationId": 601,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 2.7000000178813934,
+            "domainLookupStart": 2.7000000178813934,
+            "domainLookupEnd": 2.7000000178813934,
+            "connectStart": 2.7000000178813934,
+            "secureConnectionStart": 0,
+            "connectEnd": 2.7000000178813934,
+            "requestStart": 2.7000000178813934,
+            "responseStart": 2.7000000178813934,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 0,
+            "responseEnd": 22,
+            "transferSize": 2015,
+            "encodedBodySize": 1715,
+            "decodedBodySize": 1715,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 71.10000002384186,
+            "domContentLoadedEventStart": 117.60000002384186,
+            "domContentLoadedEventEnd": 117.60000002384186,
+            "domComplete": 117.7000000178814,
+            "loadEventStart": 117.7000000178814,
+            "loadEventEnd": 117.80000001192093,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "low"
+            }
+          }
+        ],
+        "paint": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 208,
+            "duration": 0,
+            "navigationId": 601,
+            "paintTime": 139.60000002384186,
+            "presentationTime": 208
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 208,
+            "duration": 0,
+            "navigationId": 601,
+            "paintTime": 139.60000002384186,
+            "presentationTime": 208
+          }
+        ]
+      }
+    },
+    {
+      "label": "baseline",
+      "launchReturnedMs": 354.63,
+      "firstWindowMs": 354.64,
+      "buttonVisibleMs": 598.93,
+      "apiAndMainButtonMs": 614.36,
+      "readyMs": 639.93,
+      "main": {
+        "marks": {
+          "wrapperProcessTimeMs": 71.773208,
+          "appReadyMs": 42.22,
+          "windowCreatedMs": 136.04,
+          "domReadyMs": 323.4,
+          "didFinishLoadMs": 323.57,
+          "windowShownMs": 411.56,
+          "readyToShowMs": 429.78
+        },
+        "nativeVisible": true,
+        "userData": "${TEMP_PROFILE_ROOT}/4",
+        "sessionData": "${TEMP_PROFILE_ROOT}/4"
+      },
+      "renderer": {
+        "url": "file://${BASELINE_OUTPUT}/renderer/index.html",
+        "navigation": [
+          {
+            "name": "file://${BASELINE_OUTPUT}/renderer/index.html",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 179.19999998807907,
+            "navigationId": 4378,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 3.0999999940395355,
+            "domainLookupStart": 3.0999999940395355,
+            "domainLookupEnd": 3.0999999940395355,
+            "connectStart": 3.0999999940395355,
+            "secureConnectionStart": 0,
+            "connectEnd": 3.0999999940395355,
+            "requestStart": 3.0999999940395355,
+            "responseStart": 3.0999999940395355,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 0,
+            "responseEnd": 33,
+            "transferSize": 2015,
+            "encodedBodySize": 1715,
+            "decodedBodySize": 1715,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 93.39999997615814,
+            "domContentLoadedEventStart": 179,
+            "domContentLoadedEventEnd": 179,
+            "domComplete": 179.09999999403954,
+            "loadEventStart": 179.09999999403954,
+            "loadEventEnd": 179.19999998807907,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "low"
+            }
+          }
+        ],
+        "paint": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 256,
+            "duration": 0,
+            "navigationId": 4378,
+            "paintTime": 197.69999998807907,
+            "presentationTime": 256
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 256,
+            "duration": 0,
+            "navigationId": 4378,
+            "paintTime": 197.69999998807907,
+            "presentationTime": 256
+          }
+        ]
+      }
+    },
+    {
+      "label": "optimized",
+      "launchReturnedMs": 371.69,
+      "firstWindowMs": 371.71,
+      "buttonVisibleMs": 492.99,
+      "apiAndMainButtonMs": 507.51,
+      "readyMs": 538.96,
+      "main": {
+        "marks": {
+          "wrapperProcessTimeMs": 99.299542,
+          "appReadyMs": 63.17,
+          "windowCreatedMs": 147.65,
+          "domReadyMs": 233.16,
+          "didFinishLoadMs": 233.3,
+          "readyToShowMs": 296.22,
+          "windowShownMs": 314.53
+        },
+        "nativeVisible": true,
+        "userData": "${TEMP_PROFILE_ROOT}/5",
+        "sessionData": "${TEMP_PROFILE_ROOT}/5"
+      },
+      "renderer": {
+        "url": "file://${PROJECT_ROOT}/out/renderer/index.html",
+        "navigation": [
+          {
+            "name": "file://${PROJECT_ROOT}/out/renderer/index.html",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 80.30000001192093,
+            "navigationId": 9439,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 2,
+            "domainLookupStart": 2,
+            "domainLookupEnd": 2,
+            "connectStart": 2,
+            "secureConnectionStart": 0,
+            "connectEnd": 2,
+            "requestStart": 2,
+            "responseStart": 2,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 0,
+            "responseEnd": 29,
+            "transferSize": 2015,
+            "encodedBodySize": 1715,
+            "decodedBodySize": 1715,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 70.30000001192093,
+            "domContentLoadedEventStart": 80.2000000178814,
+            "domContentLoadedEventEnd": 80.2000000178814,
+            "domComplete": 80.30000001192093,
+            "loadEventStart": 80.30000001192093,
+            "loadEventEnd": 80.30000001192093,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "high"
+            }
+          }
+        ],
+        "paint": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 168,
+            "duration": 0,
+            "navigationId": 9439,
+            "paintTime": 96.80000001192093,
+            "presentationTime": 168
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 168,
+            "duration": 0,
+            "navigationId": 9439,
+            "paintTime": 96.80000001192093,
+            "presentationTime": 168
+          }
+        ]
+      }
+    }
+  ],
+  "pathNormalization": "Machine-specific project and temporary directory paths are replaced with placeholders; measurements and fixture hashes are unchanged."
+}

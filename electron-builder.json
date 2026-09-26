@@ -1,0 +1,91 @@
+{
+  "appId": "com.markdown-reader.app",
+  "productName": "Markdown Reader",
+  "directories": {
+    "output": "dist-mas"
+  },
+  "files": [
+    "out/**/*",
+    "node_modules/**/*"
+  ],
+  "fileAssociations": [
+    {
+      "ext": "md",
+      "name": "Markdown Document",
+      "description": "Markdown Document",
+      "role": "Editor"
+    },
+    {
+      "ext": "markdown",
+      "name": "Markdown Document",
+      "description": "Markdown Document",
+      "role": "Editor"
+    },
+    {
+      "ext": "txt",
+      "name": "Text Document",
+      "description": "Text Document",
+      "role": "Editor"
+    }
+  ],
+  "mac": {
+    "category": "public.app-category.productivity",
+    "icon": "build/icon.icns",
+    "target": [
+      {
+        "target": "mas",
+        "arch": [
+          "arm64"
+        ]
+      }
+    ],
+    "hardenedRuntime": true,
+    "gatekeeperAssess": false,
+    "entitlements": "build/entitlements.mac.plist",
+    "entitlementsInherit": "build/entitlements.mac.plist",
+    "extendInfo": {
+      "ElectronTeamID": "VLST7Y4K25",
+      "NSDocumentsFolderUsageDescription": "Markdown Reader needs access to read and save Markdown documents.",
+      "NSDesktopFolderUsageDescription": "Markdown Reader needs access to open Markdown files from your desktop.",
+      "NSDownloadsFolderUsageDescription": "Markdown Reader needs access to open Markdown files from your downloads.",
+      "ITSAppUsesNonExemptEncryption": false
+    },
+    "minimumSystemVersion": "13.0.0"
+  },
+  "mas": {
+    "entitlements": "build/entitlements.mas.plist",
+    "entitlementsInherit": "build/entitlements.mas.inherit.plist",
+    "hardenedRuntime": false,
+    "type": "distribution",
+    "minimumSystemVersion": "13.0.0",
+    "provisioningProfile": "build/embedded.provisionprofile",
+    "identity": "SHENJIA CAO (VLST7Y4K25)",
+    "sign": "scripts/sign-mas.cjs",
+    "entitlementsLoginHelper": "build/entitlements.mas.loginhelper.plist"
+  },
+  "win": {
+    "icon": "build/icon.ico",
+    "target": [
+      "nsis",
+      "portable"
+    ]
+  },
+  "linux": {
+    "icon": "build/icon.png",
+    "target": [
+      "AppImage",
+      "deb"
+    ],
+    "mimeTypes": [
+      "text/markdown",
+      "text/x-markdown"
+    ]
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "installerIcon": "build/icon.ico"
+  },
+  "buildVersion": "2026.9.21",
+  "artifactName": "${productName}-${version}-${buildVersion}-${arch}.${ext}"
+}

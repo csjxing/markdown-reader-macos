@@ -1,0 +1,38 @@
+/* Light theme (default) */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-tertiary: #94a3b8;
+  --border-color: #e2e8f0;
+  --accent-color: #3b82f6;
+  --accent-hover: #2563eb;
+}
+
+/* Dark theme */
+html.dark {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-tertiary: #64748b;
+  --border-color: #334155;
+  --accent-color: #60a5fa;
+  --accent-hover: #3b82f6;
+}
+
+/* Sepia theme */
+html.sepia {
+  --bg-primary: #f4ecd8;
+  --bg-secondary: #f8f2e6;
+  --bg-tertiary: #ede5d1;
+  --text-primary: #5c4b37;
+  --text-secondary: #8b7355;
+  --text-tertiary: #a89479;
+  --border-color: #d9cba8;
+  --accent-color: #b8860b;
+  --accent-hover: #996f0a;
+}

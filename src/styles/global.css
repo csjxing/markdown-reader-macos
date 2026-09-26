@@ -1,0 +1,558 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-white text-gray-900 transition-colors duration-300;
+    user-select: text;
+    -webkit-user-select: text;
+  }
+
+  html.dark body {
+    @apply bg-gray-900 text-gray-100;
+  }
+
+  /* Ensure text selection works everywhere */
+  * {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+
+  input, textarea {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+}
+
+@layer components {
+  /* Window controls area */
+  .titlebar {
+    -webkit-app-region: drag;
+  }
+
+  .titlebar button {
+    -webkit-app-region: no-drag;
+  }
+
+  /* Scrollbar styles */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+
+  html.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gray-700;
+  }
+
+  html.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-600;
+  }
+
+  /* Reader themes */
+  .reader-light {
+    @apply bg-white text-gray-900;
+  }
+
+  .reader-sepia {
+    @apply bg-amber-50 text-amber-950;
+  }
+
+  .reader-dark {
+    @apply bg-gray-900 text-gray-100;
+  }
+
+  /* Book card hover effect */
+  .book-card {
+    @apply transition-all duration-200 ease-in-out;
+    @apply hover:shadow-lg hover:scale-105;
+  }
+
+  /* Progress bar */
+  .progress-bar {
+    @apply h-1 bg-gray-200 rounded-full overflow-hidden;
+  }
+
+  .progress-bar-fill {
+    @apply h-full bg-blue-500 transition-all duration-200;
+  }
+
+  /* Markdown content styles */
+  .markdown-content {
+    @apply leading-relaxed;
+    user-select: text;
+    -webkit-user-select: text;
+  }
+
+  .markdown-content h1 {
+    @apply text-3xl font-bold mb-6 mt-8 first:mt-0;
+  }
+
+  .markdown-content h2 {
+    @apply text-2xl font-bold mb-4 mt-6;
+  }
+
+  .markdown-content h3 {
+    @apply text-xl font-semibold mb-3 mt-5;
+  }
+
+  .markdown-content h4 {
+    @apply text-lg font-semibold mb-2 mt-4;
+  }
+
+  .markdown-content p {
+    @apply mb-4 text-justify;
+  }
+
+  .markdown-content ul,
+  .markdown-content ol {
+    @apply mb-4 pl-6;
+  }
+
+  .markdown-content ul,
+  .editor-content ul {
+    list-style-type: disc;
+  }
+
+  .markdown-content ol,
+  .editor-content ol {
+    list-style-type: decimal;
+  }
+
+  .markdown-content .contains-task-list {
+    list-style: none;
+  }
+
+  .markdown-content li {
+    @apply mb-2;
+  }
+
+  .markdown-content code {
+    @apply bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono;
+    @apply dark:bg-gray-800;
+  }
+
+  .markdown-content pre {
+    @apply mb-4 rounded-lg overflow-x-auto;
+  }
+
+  .markdown-content pre code {
+    @apply bg-transparent p-0;
+  }
+
+  .markdown-content blockquote {
+    @apply border-l-4 border-gray-300 pl-4 my-4 italic text-gray-600;
+    @apply dark:border-gray-600 dark:text-gray-400;
+  }
+
+  .markdown-content a {
+    @apply text-blue-600 hover:underline;
+    @apply dark:text-blue-400;
+  }
+
+  .markdown-content table {
+    @apply w-full mb-4 border-collapse;
+  }
+
+  .markdown-content th,
+  .markdown-content td {
+    @apply border border-gray-300 px-3 py-2 text-left;
+    @apply dark:border-gray-600;
+  }
+
+  .markdown-content th {
+    @apply bg-gray-100 font-semibold;
+    @apply dark:bg-gray-800;
+  }
+
+  .markdown-content hr {
+    @apply my-8 border-gray-300;
+    @apply dark:border-gray-600;
+  }
+
+  .markdown-content img {
+    @apply max-w-full h-auto rounded-lg my-4;
+  }
+
+  /* Sepia theme adjustments */
+  .reader-sepia .markdown-content code {
+    @apply bg-amber-100;
+  }
+
+  .reader-sepia .markdown-content blockquote {
+    @apply border-amber-400 text-amber-800;
+  }
+
+  .reader-sepia .markdown-content pre {
+    @apply bg-amber-100;
+  }
+
+  /* Page flip animation */
+  .page-flip-container {
+    perspective: 2000px;
+    transform-style: preserve-3d;
+  }
+
+  .page-flip {
+    transform-origin: left center;
+    backface-visibility: hidden;
+  }
+
+  /* Tiptap Editor Styles */
+  .ProseMirror {
+    outline: none;
+  }
+
+  .ProseMirror p.is-editor-empty:first-child::before {
+    color: #adb5bd;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+  }
+
+  /* Editor content - same styles as reader */
+  .editor-content h1 {
+    @apply text-3xl font-bold mb-6 mt-8 first:mt-0;
+  }
+
+  .editor-content h2 {
+    @apply text-2xl font-bold mb-4 mt-6;
+  }
+
+  .editor-content h3 {
+    @apply text-xl font-semibold mb-3 mt-5;
+  }
+
+  .editor-content h4 {
+    @apply text-lg font-semibold mb-2 mt-4;
+  }
+
+  .editor-content h5 {
+    @apply text-base font-semibold mb-2 mt-3;
+  }
+
+  .editor-content h6 {
+    @apply text-sm font-semibold mb-2 mt-3;
+  }
+
+  .editor-content p {
+    @apply mb-4;
+  }
+
+  .editor-content ul,
+  .editor-content ol {
+    @apply mb-4 pl-6;
+  }
+
+  .editor-content li {
+    @apply mb-2;
+  }
+
+  .editor-content li p {
+    @apply mb-0;
+  }
+
+  .editor-content code {
+    @apply bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+
+  html.dark .editor-content code {
+    @apply bg-gray-700;
+  }
+
+  .reader-sepia .editor-content code {
+    @apply bg-amber-100 text-amber-900;
+  }
+
+  .editor-content pre {
+    @apply bg-gray-100 rounded-lg p-4 mb-4 overflow-x-auto;
+  }
+
+  html.dark .editor-content pre {
+    @apply bg-gray-800;
+  }
+
+  .reader-sepia .editor-content pre {
+    @apply bg-amber-100;
+  }
+
+  .editor-content pre code {
+    @apply bg-transparent p-0;
+  }
+
+  .editor-content blockquote {
+    @apply border-l-4 border-gray-300 pl-4 my-4 italic text-gray-600;
+  }
+
+  html.dark .editor-content blockquote {
+    @apply border-gray-600 text-gray-400;
+  }
+
+  .reader-sepia .editor-content blockquote {
+    @apply border-amber-400 text-amber-800;
+  }
+
+  .editor-content a {
+    @apply text-blue-600 hover:underline;
+  }
+
+  html.dark .editor-content a {
+    @apply text-blue-400;
+  }
+
+  .reader-sepia .editor-content a {
+    @apply text-blue-700;
+  }
+
+  .editor-content hr {
+    @apply my-6 border-gray-300;
+  }
+
+  html.dark .editor-content hr {
+    @apply border-gray-600;
+  }
+
+  .reader-sepia .editor-content hr {
+    @apply border-amber-400;
+  }
+
+  .editor-content img {
+    @apply max-w-full h-auto rounded-lg my-4;
+  }
+
+  .editor-content table {
+    @apply w-full border-collapse mb-4;
+  }
+
+  .editor-content th,
+  .editor-content td {
+    @apply border border-gray-300 px-3 py-2 text-left;
+    @apply min-w-[50px];
+  }
+
+  /* Better table cell interaction */
+  .editor-content td,
+  .editor-content th {
+    @apply relative;
+  }
+
+  .editor-content td.selectedCell,
+  .editor-content th.selectedCell {
+    @apply bg-blue-100;
+  }
+
+  html.dark .editor-content td.selectedCell,
+  html.dark .editor-content th.selectedCell {
+    @apply bg-blue-900/30;
+  }
+
+  /* Table resize handle */
+  .editor-content .column-resize-handle {
+    @apply absolute right-0 top-0 bottom-0 w-0.5 bg-blue-500 pointer-events-none;
+  }
+
+  html.dark .editor-content th,
+  html.dark .editor-content td {
+    @apply border-gray-600;
+  }
+
+  .reader-sepia .editor-content th,
+  .reader-sepia .editor-content td {
+    @apply border-amber-300;
+  }
+
+  .editor-content th {
+    @apply bg-gray-100 font-semibold;
+  }
+
+  html.dark .editor-content th {
+    @apply bg-gray-800;
+  }
+
+  .reader-sepia .editor-content th {
+    @apply bg-amber-100;
+  }
+
+  /* Editor table specific styles */
+  .editor-table {
+    @apply border-collapse w-full mb-4;
+    margin-left: 40px;
+    margin-top: 36px;
+  }
+
+  .editor-table th,
+  .editor-table td {
+    @apply border border-gray-300 px-3 py-2 text-left min-w-[60px] relative;
+  }
+
+  /* Visual feedback for selected cells */
+  .editor-table .selectedCell {
+    @apply bg-blue-100;
+  }
+
+  html.dark .editor-table .selectedCell {
+    @apply bg-blue-900/40;
+  }
+
+  .reader-sepia .editor-table .selectedCell {
+    @apply bg-amber-200;
+  }
+
+  /* Column resize indicator */
+  .editor-table .column-resize-handle {
+    @apply absolute right-0 top-0 bottom-0 w-1 bg-blue-500 cursor-col-resize opacity-0 transition-opacity;
+  }
+
+  .editor-table:hover .column-resize-handle {
+    @apply opacity-100;
+  }
+
+  /* Table hover effects */
+  .editor-table th:hover::after,
+  .editor-table td:hover::after {
+    content: '';
+    @apply absolute inset-0 bg-blue-500/5 pointer-events-none;
+  }
+
+  html.dark .editor-table th:hover::after,
+  html.dark .editor-table td:hover::after {
+    @apply bg-blue-400/10;
+  }
+
+  .editor-content mark {
+    @apply bg-yellow-200 px-0.5 rounded;
+  }
+
+  html.dark .editor-content mark {
+    @apply bg-yellow-700 text-white;
+  }
+
+  .reader-sepia .editor-content mark {
+    @apply bg-amber-200;
+  }
+
+  /* Task list styles */
+  .editor-content ul[data-type="taskList"] {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .editor-content ul[data-type="taskList"] li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .editor-content ul[data-type="taskList"] li > label {
+    flex: 0 0 auto;
+    margin-right: 0.5rem;
+    user-select: none;
+  }
+
+  .editor-content ul[data-type="taskList"] li > label input[type="checkbox"] {
+    cursor: pointer;
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0.25rem;
+    accent-color: #3b82f6;
+  }
+
+  .editor-content ul[data-type="taskList"] li > div {
+    flex: 1 1 auto;
+  }
+
+  /* Selected text styling */
+  .ProseMirror-selectednode {
+    outline: 2px solid #3b82f6;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Search highlight styles */
+.search-highlight {
+  background-color: rgba(255, 235, 59, 0.6);
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
+.search-highlight-current {
+  background-color: rgba(255, 152, 0, 0.8);
+  color: white;
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
+/* Dark mode search highlights */
+html.dark .search-highlight {
+  background-color: rgba(255, 235, 59, 0.4);
+}
+
+html.dark .search-highlight-current {
+  background-color: rgba(255, 152, 0, 0.6);
+}
+
+/* Sepia mode search highlights */
+.reader-sepia .search-highlight {
+  background-color: rgba(255, 193, 7, 0.5);
+}
+
+.reader-sepia .search-highlight-current {
+  background-color: rgba(255, 152, 0, 0.7);
+}
+/* Reader controls stay clear of the document and remain visible to keyboard users. */
+.reader-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  transition: background-color 140ms ease;
+}
+.reader-action:hover, .reader-action[aria-pressed="true"] { background: rgb(127 127 127 / 12%); }
+.reader-action:disabled { opacity: .35; cursor: default; }
+button:focus-visible, [role="button"]:focus-visible { outline: 2px solid #3b82f6; outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+
+/* A code block remains selectable; the copy control is outside its text. */
+.reader-code-block { position: relative; }
+.reader-code-copy { position: absolute; top: .5rem; right: .5rem; z-index: 1; padding: .25rem .5rem; border: 1px solid #d1d5db; border-radius: .375rem; background: #fff; color: #374151; font: 12px/1.5 system-ui, sans-serif; opacity: 0; transition: opacity .15s; }
+.reader-code-block:hover .reader-code-copy, .reader-code-block:focus-within .reader-code-copy { opacity: 1; }
+.dark .reader-code-copy { background: #1f2937; color: #e5e7eb; border-color: #4b5563; }
+.reader-code-block pre { padding-top: 2.5rem; }

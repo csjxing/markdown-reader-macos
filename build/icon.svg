@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="50%" style="stop-color:#16213e"/>
+      <stop offset="100%" style="stop-color:#0f3460"/>
+    </linearGradient>
+    <linearGradient id="mGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d9ff"/>
+      <stop offset="50%" style="stop-color:#00b4d8"/>
+      <stop offset="100%" style="stop-color:#0077b6"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="innerGlow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="blur" in2="SourceGraphic" operator="in"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="100" fill="url(#bgGrad)"/>
+
+  <!-- Circuit pattern background -->
+  <g opacity="0.15" stroke="#00d9ff" stroke-width="1" fill="none">
+    <circle cx="80" cy="80" r="20"/>
+    <circle cx="432" cy="80" r="20"/>
+    <circle cx="80" cy="432" r="20"/>
+    <circle cx="432" cy="432" r="20"/>
+    <line x1="100" y1="80" x2="180" y2="80"/>
+    <line x1="332" y1="80" x2="412" y2="80"/>
+    <line x1="80" y1="100" x2="80" y2="180"/>
+    <line x1="80" y1="332" x2="80" y2="412"/>
+    <line x1="432" y1="100" x2="432" y2="180"/>
+    <line x1="432" y1="332" x2="432" y2="412"/>
+  </g>
+
+  <!-- Main M letter -->
+  <g filter="url(#glow)">
+    <!-- Left vertical bar -->
+    <path d="M120 380 L120 140 L180 140 L180 300 L256 180 L332 300 L332 140 L392 140 L392 380 L332 380 L256 260 L180 380 Z"
+          fill="url(#mGrad)"
+          opacity="0.9"/>
+
+    <!-- Highlight edges -->
+    <path d="M120 140 L180 140 L180 300 L256 180 L332 300 L332 140 L392 140"
+          fill="none"
+          stroke="#00ffff"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+  </g>
+
+  <!-- Tech accents -->
+  <g fill="#00ffff" opacity="0.8">
+    <circle cx="120" cy="140" r="6"/>
+    <circle cx="392" cy="140" r="6"/>
+    <circle cx="120" cy="380" r="6"/>
+    <circle cx="392" cy="380" r="6"/>
+  </g>
+
+  <!-- Data flow lines -->
+  <g stroke="#00d9ff" stroke-width="2" fill="none" opacity="0.6">
+    <path d="M60 256 Q90 256 120 200" stroke-dasharray="4,4"/>
+    <path d="M452 256 Q422 256 392 200" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- Corner brackets -->
+  <g stroke="#00ffff" stroke-width="3" fill="none" opacity="0.4">
+    <path d="M40 60 L40 40 L60 40"/>
+    <path d="M452 40 L472 40 L472 60"/>
+    <path d="M472 452 L472 472 L452 472"/>
+    <path d="M60 472 L40 472 L40 452"/>
+  </g>
+</svg>

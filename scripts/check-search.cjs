@@ -1,0 +1,26 @@
+const assert = require('node:assert/strict')
+const fs = require('node:fs')
+const path = require('node:path')
+const vm = require('node:vm')
+const ts = require('typescript')
+const { Schema } = require('@tiptap/pm/model')
+const { EditorState } = require('@tiptap/pm/state')
+const output = { exports: {} }
+vm.runInNewContext(ts.transpileModule(fs.readFileSync(path.join(__dirname, '../src/components/editor/SearchExtension.ts'), 'utf8'), {
+  compilerOptions: { target: ts.ScriptTarget.ES2020, module: ts.ModuleKind.CommonJS }
+}).outputText, { module: output, exports: output.exports, require })
+const { SearchExtension, searchPluginKey } = output.exports
+const plugins = SearchExtension.config.addProseMirrorPlugins.call({ options: { searchQuery: '', currentIndex: 0 } })
+const schema = new Schema({ nodes: { doc: { content: 'paragraph+' }, paragraph: { content: 'text*' }, text: {} } })
+const doc = schema.node('doc', null, [schema.node('paragraph', null, schema.text('Hello hello [x].'))])
+let state = EditorState.create({ doc, plugins })
+state = state.apply(state.tr.setMeta(searchPluginKey, { query: 'hello', currentIndex: 1 }))
+assert.equal(searchPluginKey.getState(state).results, 2)
+assert.equal(searchPluginKey.getState(state).decorations.find()[1].type.attrs.class, 'search-highlight-current')
+state = state.apply(state.tr.insertText(' hello', state.doc.content.size - 1))
+assert.equal(searchPluginKey.getState(state).results, 3)
+state = state.apply(state.tr.setMeta(searchPluginKey, { query: '[x]' }))
+assert.equal(searchPluginKey.getState(state).results, 1)
+state = state.apply(state.tr.setMeta(searchPluginKey, { clear: true }))
+assert.equal(searchPluginKey.getState(state).results, 0)
+console.log('PASS: editor search matching, selected hit, query retained after typing, literal special characters and clearing')
